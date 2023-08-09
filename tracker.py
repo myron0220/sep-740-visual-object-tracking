@@ -78,7 +78,7 @@ class ObjectTracker():
               cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), self.colors[track_id % self.color_size], 2)
               cv2.rectangle(frame, (xmin - 1, ymin - 30), (xmin + 31, ymin), self.colors[track_id % self.color_size], -1)
               cv2.putText(frame, str(track_id), (xmin + 5, ymin - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
-              # output (frame, track_id, left, top, weight, height) to file
+              # output (frame_id, track_id, left, top, weight, height) to file
               file.write(f"{frame_counter}  {track_id}  {xmin}  {ymin}  {xmax - xmin}  {ymax - ymin}\n")
 
             ### --- output: display and store output frame withtracking result --- ###
